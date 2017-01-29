@@ -91,6 +91,25 @@ class CalcTestCase(unittest.TestCase):
         result = interpreter.expr()
         self.assertEqual(result, 20)
 
+    # Extend the calculator to handle multiplication of two integers
+    def test_interpreter_multiplication(self):
+        interpreter = self.makeInterpreter('2 * 3')
+        result = interpreter.expr()
+        self.assertEqual(result, 6)
+
+        interpreter = self.makeInterpreter(' 4 *  5')
+        result = interpreter.expr()
+        self.assertEqual(result, 20)
+
+    # Extend the calculator to handle division of two integers
+    def test_interpreter_division(self):
+        interpreter = self.makeInterpreter('4 / 2')
+        result = interpreter.expr()
+        self.assertEqual(result, 2)
+
+        interpreter = self.makeInterpreter(' 20 /  5')
+        result = interpreter.expr()
+        self.assertEqual(result, 4)
 
 if __name__ == '__main__':
     unittest.main()
