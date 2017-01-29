@@ -110,6 +110,8 @@ class Interpreter(object):
 
         expr -> INTEGER PLUS INTEGER
         expr -> INTEGER MINUS INTEGER
+        expr -> INTEGER MULTIPLY INTEGER
+        expr -> INTEGER DIVIDE INTEGER
         """
         # set current token to the first token taken from the input
         self.current_token = self.get_next_token()
