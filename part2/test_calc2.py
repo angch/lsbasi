@@ -111,5 +111,15 @@ class CalcTestCase(unittest.TestCase):
         result = interpreter.expr()
         self.assertEqual(result, 4)
 
+    # Modify the code to interpret expressions containing an arbitrary number of additions and subtractions
+    def test_interpreter_arbitrary(self):
+        interpreter = self.makeInterpreter('1 + 2 + 3 + 4  ')
+        result = interpreter.expr()
+        self.assertEqual(result, 10)
+
+        interpreter = self.makeInterpreter('9 - 5 + 3 + 11')
+        result = interpreter.expr()
+        self.assertEqual(result, 18)
+
 if __name__ == '__main__':
     unittest.main()
